@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Create Entry</title>
+    <link rel="stylesheet" href="{% static 'create_entry.css' %}">
 </head>
 
 <body>
-    <form>
-        <input id="input" type="text" name="name">
-        <button>Click to submit</button>
+    <form action="{% url 'create_entry' %}" method="POST">
+        <label for="content">
+            {% csrf_token %}
+            <input autofocus autocomplete="all" minlength="4" maxlength="99" type="text" name="content"
+                placeholder="Min: 4 Max: 99" id="input">
+            <button id="subbutton">Submit</button>
+        </label>
     </form>
 </body>
 
