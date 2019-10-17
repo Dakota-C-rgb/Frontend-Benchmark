@@ -1,0 +1,49 @@
+body {
+    background-color: lightslategray;
+}
+
+#link {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+
+    color: blue;
+}
+
+h1 {
+    font-family: Chalkduster;
+
+    margin-left: 33%;
+
+}
+
+#posts {
+    border: 1px solid black;
+    border-radius: 5px;
+
+    height: 30vh;
+    width: 50vw;
+
+    text-align: center;
+    
+    background-color: lightblue;
+
+    margin-top: 10px;
+    margin-left: 20%;
+
+    font-family: Chalkduster;
+}
+
+#post_text {
+    margin-top: 13%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}

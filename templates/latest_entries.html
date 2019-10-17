@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,19 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Latest Entries</title>
+    <link rel="stylesheet" href="{% static 'latest_entry.css' %}">
 </head>
 
 <body>
+    <h1>Welcome To Critter!</h1>
     <button>Click to see top posts</button>
     <ul>
         {% for entry in entries %}
-        <li>
-            <p id="time">{{ entry.content }}</p>
-            <p>{{ entry.likes }}</p>
+        <li id="posts">
+            <p id="post_text">{{ entry.content }}</p>
+            <p> Likes: {{ entry.likes }}</p>
         </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'create_entry' %}">Click this link to create an entry</a>
+    <a href="{% url 'create_entry' %}" id="link">Click this link to create an entry</a>
 </body>
 
 </html>
