@@ -42,7 +42,7 @@ ul {
     list-style-type: none;
 }
 
-button {
+#top_post_button {
     position: absolute;
     top: 2%;
     left: 2%;

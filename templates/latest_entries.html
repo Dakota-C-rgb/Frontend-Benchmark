@@ -8,16 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Latest Entries</title>
     <link rel="stylesheet" href="{% static 'latest_entry.css' %}">
+    <script src="{% static 'entry.js' %}" defer></script>
 </head>
 
 <body>
     <h1>Welcome To Critter!</h1>
-    <button>Click to see top posts</button>
+    <button id="top_post_button">Click to see top posts</button>
     <ul>
         {% for entry in entries %}
+        {% csrf_token %}
         <li id="posts">
             <p id="post_text">{{ entry.content }}</p>
-            <p> Likes: {{ entry.likes }}</p>
+            <div id="divd">
+                <p id="number_likes"> Likes: {{ entry.likes }}
+            </div>
+            <button id="like_button">Like</button></p>
         </li>
         {% endfor %}
     </ul>
